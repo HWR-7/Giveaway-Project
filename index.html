@@ -5,7 +5,76 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Giveaway Countdown</title>
 <link rel="stylesheet" href="./scripts/styles.css">
-<script src="./styles/script.js"></script>
+<script >
+     // Set the date we're counting down to
+ const giveawayDate = new Date('2024-03-08').getTime();
+
+// Update the countdown every 1 second
+const countdown = setInterval(() => {
+  // Get today's date and time
+  const now = new Date().getTime();
+  
+  // Calculate the distance between now and the giveaway date
+  const distance = giveawayDate - now;
+  
+  // Calculate days, hours, minutes and seconds
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+  // Display the result in the element with id="countdown"
+ //  document.getElementById('countdown').innerHTML = `Giveaway ends in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+  document.getElementById('days').innerHTML = `${days}`;
+  document.getElementById('hours').innerHTML = `${hours}`;
+  document.getElementById('minutes').innerHTML = `${minutes}`;
+  document.getElementById('seconds').innerHTML = `${seconds}`;
+  // If the countdown is over, display a message
+  if (distance < 100000000) {
+    clearInterval(countdown);
+    document.getElementById('countdown').innerHTML = 'The giveaway has ended!';
+  }
+}, 1000);
+</script>
+<style>body{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 100px;
+    background-color: aqua;
+  }
+  .container__1{
+    /* background-color: cadetblue; */
+    background: transparent;
+  }
+  .container__1 img{
+    border-radius: 20px;
+    width: 350px;
+    height: 400px;
+    align-items: center;
+  }
+  .container{
+    /* background-color: green; */
+    text-align: left;
+    margin-left: 15px;
+  }
+  .countdown{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 65%;
+  }
+  .count{
+    background: #000;
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    color: white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+  </style>
 </head>
 <body>
     <div class="container__1">
