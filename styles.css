@@ -1,0 +1,38 @@
+body{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 100px;
+  background-color: aqua;
+}
+.container__1{
+  /* background-color: cadetblue; */
+  background: transparent;
+}
+.container__1 img{
+  border-radius: 20px;
+  width: 350px;
+  height: 400px;
+  align-items: center;
+}
+.container{
+  /* background-color: green; */
+  text-align: left;
+  margin-left: 15px;
+}
+.countdown{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 65%;
+}
+.count{
+  background: #000;
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  color: white;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
